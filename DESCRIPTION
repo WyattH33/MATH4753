@@ -1,0 +1,18 @@
+Package: MATH4753
+Title: Lab Helpers
+Version: 0.0.1
+Authors@R: person(given = "Wyatt", family = "McBride", 
+                  email = "wmcbrideou@ou.edu", 
+                  role = c("aut", "cre"))
+Description: Minimal functions for MATH 4753 labs.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 3.6)
+Imports: stats, graphics
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+LazyData: true
+RoxygenNote: 7.3.3
+VignetteBuilder: knitr

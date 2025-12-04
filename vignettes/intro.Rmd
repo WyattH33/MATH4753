@@ -1,0 +1,53 @@
+---
+title: "Intro to MATH4753"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Intro to MATH4753}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r, setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+```{r, message=FALSE}
+library(MATH4753)
+
+# load the fire dataset included in the package
+data("fire")
+
+# look at basic structure
+head(fire)
+summary(fire)
+str(fire)
+
+plot(
+  fire[[1]], fire[[2]],
+  xlab = names(fire)[1],
+  ylab = names(fire)[2],
+  main = "Fire data: first two variables"
+)
+
+x <- fire[[1]]
+
+boot_out <- myboot2(
+  iter = 2000,
+  x    = x,
+  fun  = "mean",
+  alpha = 0.05
+)
+
+boot_out
+
+ntickets(N = 100, gamma = 0.05, p = 0.8)
+
+out_curve <- myncurve(mu = 0, sigma = 1, a = 1.5)
+out_curve
+
+out_cltp <- mycltp(n = 30, iter = 1000, lambda = 4)
+head(out_cltp)
+```
